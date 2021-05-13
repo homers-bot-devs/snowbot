@@ -1,7 +1,7 @@
 {
-   "name": "snowskingdom bot",
-   "verison": "1.0",
-   "description": "snowskingdom disocrd bot",
+   "name": "snowskingdombot",
+   "verison": "1.0.0",
+   "description": "snowskingdom discord bot",
    "main": "index.js",
    "scripts": {
      "test": "node index.js"  
