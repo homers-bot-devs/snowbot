@@ -1,6 +1,6 @@
 module.exports = (clinet, messae) => {
-    if(MessageChannel.author.bot) return;
-
+    
+    if(message.author.bot) return;
 
 
     if(message.content.indexof(client.config.prefix) !==0) return;
