@@ -1,12 +1,12 @@
-module.exports = (clinet, messae) => {
+module.exports = (clinet, message) => {
     
-    if(message.author.bot) return;
+    if (message.author.bot) return;
 
 
-    if(message.content.indexof(client.config.prefix) !==0) return;
+    if (message.content.indexof(client.config.prefix) !==0) return;
 
 
-    const args = message.content.slice(client.config.prefix.lenght).trim().split(/ +/g);
+    const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
 
     const cmd = client.commands.get(command);
@@ -14,4 +14,4 @@ module.exports = (clinet, messae) => {
     if (!cmd) return;
 
     cmd.run(client, message, args);
-};
+  };
