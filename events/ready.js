@@ -1,5 +1,5 @@
-module.exports = (clients) => {
-    console.log('Im alive as ' + clients.user.tag)
+module.exports = (client) => {
+    console.log('Im alive as ' + client.user.tag)
 
     const activities = [`minecraft in Homers basement`]
 
