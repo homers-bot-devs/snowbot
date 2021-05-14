@@ -1,6 +1,6 @@
 const config = {
     token: 'put token here',
-    perfix: '>'
+    prefix: '>'
 }
 
 module.exports = config;

@@ -1,9 +1,9 @@
-module.exports = (clinet, message) => {
+module.exports = (client, message) => {
     
     if (message.author.bot) return;
 
 
-    if (message.content.indexof(client.config.prefix) !==0) return;
+    if (message.content.indexof(client.config.prefix) !== 0) return;
 
 
     const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
