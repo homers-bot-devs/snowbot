@@ -3,4 +3,4 @@ const config = {
     perfix: '>'
 }
 
-module.expots = config;
+module.exports = config;
