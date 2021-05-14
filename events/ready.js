@@ -6,5 +6,5 @@ module.exports = (clients) => {
     serInterval(() => {
         let activity = activities[Math.floor(Math.random() * activities.length)]
         client.user.setActivity(activity, {type: "PLAYING"})
-    }, 5000
+    }, 5000)
 }     
