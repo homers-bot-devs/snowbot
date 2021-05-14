@@ -3,7 +3,7 @@ module.exports = (clients) => {
 
     const activities = [`minecraft in Homers basement`]
 
-    serInterval(() => {
+    setInterval(() => {
         let activity = activities[Math.floor(Math.random() * activities.length)]
         client.user.setActivity(activity, {type: "PLAYING"})
     }, 5000)
