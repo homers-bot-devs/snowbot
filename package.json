@@ -7,7 +7,7 @@
      "test": "node index.js"  
    },
    "author": "Tyler Campbell",
-   "license": "ISC"
+   "license": "ISC",
    "dependencies": {
      "discord.js": "^12.5.1",
      "fs": "0.0.1-security"

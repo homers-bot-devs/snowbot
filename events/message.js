@@ -7,7 +7,7 @@ module.exports = (clinet, messae) => {
 
 
     const args = message.content.slice(client.config.prefix.lenght).trim().split(/ +/g);
-    const command = args.shift().toLowerCase():
+    const command = args.shift().toLowerCase();
 
     const cmd = client.commands.get(command);
 
