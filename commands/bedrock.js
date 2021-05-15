@@ -7,4 +7,8 @@ exports.run = async(client, message, args) => {
     .addField('The server name', 'snowskingdom')
     .addField('IP', 'The bedrock IP is:')
     .addField('Port', 'The bedrock Port is:')
-}
+    .setColor("GREEN")
+    .setTimestamp()
+    .setFooter(`${message.author.tag}`, message.author.displayAvatarURL())
+     message.channel.send(embed)
+    }
