@@ -10,5 +10,5 @@ exports.run = async(client, message, args) => {
     .setColor("GREEN")
     .setTimestamp()
     .setFooter(`${message.author.tag}`, message.author.displayAvatarURL())
-    message.channel.send(embed)
-}
+     message.channel.send(embed)
+    }
