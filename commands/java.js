@@ -8,6 +8,6 @@ exports.run = async(client, message, args) => {
     .addField('Server IP:','1')
     .setColor("GREEN")
     .setTimestamp()
-    .setFooter(`${message.author.tag}`, message.author.display.AvatarURL())
+    .setFooter(`${message.author.tag}`, message.author.displayAvatarURL())
      message.channel.send(embed)
     }
