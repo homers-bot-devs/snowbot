@@ -1,5 +1,5 @@
 const config = require('../config')
-const { MessageEmbed } = require("discord.js")
+const { MessageEmbed } = require("discord.js");
 exports.run = async(client, message, args) => {
     let embed = new MessageEmbed()
     .setTitle('Dynmap')
