@@ -7,6 +7,7 @@ exports.run = async(client, message, args) => {
     .addField(`${config.prefix}`+'Help', 'Shows this menu')
     .addField(`${config.prefix}`+'About', 'About this bot')
     .addField(`${config.prefix}`+'Bedrock', 'Shows the IP and Port to join the bedrock plugin on my mc server')
+    .addField(`${config.prefix}`+'Dynmap', 'dynamic map system plugin url and info for snowskingdom')
     .addField(`${config.prefix}`+'Java', 'Show the java ip for my mc server')
     .setColor("GREEN")
     .setTimestamp()
