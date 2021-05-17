@@ -36,13 +36,13 @@ client.login(config.token);
 const SERVER_ADDRESS = '0.0.0.0';
 const SERVER_PORT = 25565;
 
-const STATUS_COMMAND = '`${config.prefix}`+status';
+const STATUS_COMMAND = '>status';
 const STATUS_ERROR = 'Error getting Minecraft server status...';
 const STATUS_ONLINE = '**Minecraft** server is **online**';
 const STATUS_PLAYERS = '**{online}** people are playing!';
-const STATUS_EMPTY = '**Nobody is playing';
+const STATUS_EMPTY = '**Nobody** is playing';
 
-const IP_COMMAND = '`${config.prefix}`+ip';
+const IP_COMMAND = '>ip';
 const IP_RESPONSE = 'The address for the server is `{address}:{port}`';
 
 
