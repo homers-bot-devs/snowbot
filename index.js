@@ -1,3 +1,4 @@
+const util = require('minecraft-server-util');
 const Discord = require("discord.js");
 const fs = require("fs");
 
@@ -29,3 +30,59 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 client.login(config.token);
+
+
+
+const SERVER_ADDRESS = '0.0.0.0';
+const SERVER_PORT = 25565;
+
+const STATUS_COMMAND = '`${config.prefix}`+status';
+const STATUS_ERROR = 'Error getting Minecraft server status...';
+const STATUS_ONLINE = '**Minecraft** server is **online**';
+const STATUS_PLAYERS = '**{online}** people are playing!';
+const STATUS_EMPTY = '**Nobody is playing';
+
+const IP_COMMAND = '`${config.prefix}`+ip';
+const IP_RESPONSE = 'The address for the server is `{address}:{port}`';
+
+
+
+const cacheTime = 15 * 1000; // 15 sec cache time
+let data, lastUpdated = 0;
+
+client.on('message', message => { // Listen for messages and trigger commands
+    if(message.content.trim() == STATUS_COMMAND) {
+        statusCommand(message);
+    } else if(message.content.trim() == IP_COMMAND) {
+        ipCommand(message);
+    }
+});
+
+function statusCommand(message) { // Handle status command
+    getStatus().then(data => {
+        let status = STATUS_ONLINE;
+        status += data.onlinePlayers ? 
+            STATUS_PLAYERS.replace('{online}', data.onlinePlayers) : STATUS_EMPTY;
+        message.reply(status);
+    }).catch(err => {
+        console.error(err);
+        message.reply(STATUS_ERROR);
+    })
+}
+
+function getStatus() {
+    // Return cached data if not old
+    if (Date.now() < lastUpdated + cacheTime) return Promise.resolve(data);
+    return util.status(SERVER_ADDRESS, { port: SERVER_PORT })
+        .then(res => {
+            data = res;
+            lastUpdated = Date.now();
+            return data;
+        })
+}
+
+function ipCommand(message) { // Handle IP command
+    const response = IP_RESPONSE
+        .replace('{address}', SERVER_ADDRESS).replace('{port}', SERVER_PORT)
+    message.reply(response);
+}
